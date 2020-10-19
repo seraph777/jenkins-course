@@ -14,7 +14,7 @@ job('NodeJS Docker example') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     stages {
-        Stage ('Build Image') {
+        stage ('Build Image') {
             steps {
                 dockerBuildAndPublish {
                     repositoryName('seraph777/docker-nodejs-demo')
@@ -27,8 +27,10 @@ job('NodeJS Docker example') {
                 }
             }
         }
-        Stage ('Mundo') {
-            sh 'echo "This is halloween !"'
+        stage ('Mundo') {
+            steps {
+              sh 'echo "This is halloween !"'
+            }
         }
 
 
